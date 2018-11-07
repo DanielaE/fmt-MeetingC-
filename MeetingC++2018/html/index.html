@@ -20,7 +20,7 @@
 <h1>Socializing with {fmt}</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 451px;" data-block-id="153d6cb6fd3c67ca338cb1872017a00a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
-<p>Getting familiar with the fmt library</p>
+<p>Becoming familiar with the {fmt} library</p>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 70px;" data-block-id="7271cf5f7cfd5f335b47b30497289595"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
 <p>Meeting C++ 2018</p>
@@ -1630,39 +1630,21 @@ string s = format("It is now {:%Y-%B-%d %H:%M:%S}.", Time);</code></pre></div></
 	<li>zoned_time</li>
 	<li>and possibly some more</li>
 </ul>
-</div></div></section><section data-id="557f32e679258709ac16cd9cea915177"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="0f3a040f6ac59d0b846d5f0686c05cc0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+</div></div></section><section data-id="0a7fc77e23d23d0edb6b45776b9c983e"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="6da1d82b264ee77408fef9e4b352c095"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h1>date formatting</h1>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 840px; left: 40px; top: 210px;" data-block-id="8ee81d9e201d840c3a31602af75193eb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
-<p>Build some framework: function <span style="color:#FFFF00">check_spec</span> determines the length of the formatting specification.</p>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 840px; left: 60px; top: 202px;" data-block-id="f51003ec54f98991a5fea5c4d669b7a0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
+<p>The layout of a custom-formatter base class for 'std::chrono' and <em>date</em> types:</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 880px; height: 350px; left: 40px; top: 341px;" data-block-id="96e678a84fe8b4fe49fb4dca464fadbf"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;date/date.h&gt;
+<div class="sl-block" data-block-type="code" style="width: 840px; height: 384px; left: 60px; top: 311px;" data-block-id="7ca18849b5318e95376505630d544a5b"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">namespace fmt {
 
-template &lt;typename ParseContext&gt;
-auto check_spec(ParseContext &amp; ctx) -&gt; typename ParseContext::iterator {
-  unsigned pos = 0;
-  for (auto ch : ctx) {
-    if (!ch | (ch == '}'))
-      return ctx.begin() + pos;
-    ++pos;
-  }
-  ctx.on_error("invalid format specification");
-  return {};
-}</code></pre></div></div></section><section data-id="0a7fc77e23d23d0edb6b45776b9c983e"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="6da1d82b264ee77408fef9e4b352c095"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
-<h1>date formatting</h1>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 60px; top: 210px;" data-block-id="f51003ec54f98991a5fea5c4d669b7a0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
-<p>The layout of a custom-formatter for 'chrono::time_point'</p>
-</div></div>
-<div class="sl-block" data-block-type="code" style="width: 840px; height: 410px; left: 60px; top: 281px;" data-block-id="7ca18849b5318e95376505630d544a5b"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">namespace fmt {
-
-template &lt;typename Clock, typename Duration, typename Char&gt;
-struct formatter&lt;time_point&lt;Clock, Duration&gt;, Char&gt; {
+template &lt;typename Char&gt;
+struct base_formatter {
   template &lt;typename ParseContext&gt;
   auto parse(ParseContext &amp; ctx);
 
-  template &lt;typename FormatContext&gt;
-  auto format(time_point&lt;Clock, Duration&gt; &amp; tp, FormatContext &amp; ctx);
+  template &lt;typename T, typename FormatContext&gt;
+  auto base_format(const T &amp; t, FormatContext &amp; ctx);
 
 private:
   basic_memory_buffer&lt;Char&gt; date_format; // holds the format spec
@@ -1672,12 +1654,12 @@ private:
 <h1>date formatting</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 210px;" data-block-id="5eb30cf7d1c796a10eb21ccfb8372667"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
-<p>The <span style="color:#FFFF00">parse</span> function:</p>
+<p>The common <span style="color:#FFFF00">parse</span> function:</p>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 800px; height: 421px; left: 80px; top: 272px;" data-block-id="e29e35f7b85692bb88d80b75ad194949"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">template &lt;typename ParseContext&gt;
 auto parse(ParseContext &amp; ctx) {
   const auto begin = ctx.begin();
-  const auto end   = check_spec(ctx);
+  const auto end   = find(begin, ctx.end(), '}');
   if (end == begin) {
     // empty specification
     // provide some meaningful default
@@ -1694,20 +1676,49 @@ auto parse(ParseContext &amp; ctx) {
 </code></pre></div></div></section><section data-id="51cff9fad93b27c49c338e54ec7db857"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="018aad5cc5610178a5716c1af497ab1f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h1>date formatting</h1>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 40px; top: 210px;" data-block-id="6714b9a1d2bf165958eed1fca42c6662"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
-<p>The <span style="color:#FFFF00">format</span> function.</p>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 185px;" data-block-id="6714b9a1d2bf165958eed1fca42c6662"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
+<p>The <span style="color:#FFFF00">format</span> function. It must be templated on the actual value type.</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 840px; height: 280px; left: 40px; top: 280px;" data-block-id="5c5919f117928d63df42743c268806cd"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">template &lt;typename FormatContext&gt;
-auto format(time_point&lt;Clock, Duration&gt; &amp; tp,
-            FormatContext &amp; ctx) {
-  back_insert_buf&lt;FormatContext&gt; buffer(ctx); // not shown here
+<div class="sl-block" data-block-type="code" style="width: 800px; height: 420px; left: 80px; top: 280px;" data-block-id="5c5919f117928d63df42743c268806cd"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">template &lt;typename T, typename FormatContext&gt;
+auto base_format(const T &amp; t, FormatContext &amp; ctx) {
+  // a stream buffer adapter for back-insert iterators
+  // the implementation is not shown here
+  back_insert_buf&lt;FormatContext&gt; buffer(ctx);
+
+  // a temporary output stream required by the
+  // formatting function
   basic_ostream&lt;Char&gt; output(&amp;buffer);
-  to_stream(output, date_format.data(), tp);  // from date or C++20
+
+  // the actual formatting function from date or C++20
+  to_stream(output, date_format.data(), t);
+
   if (output.fail())
      ctx.on_error("invalid format specification");
   return buffer;
 }
-</code></pre></div></div></section><section data-id="d223a2b84bc2678ef61b4fe5bc3a5163"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="e1f9ab9cf428994b54c91f002111a58a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+</code></pre></div></div></section><section data-id="43b454ea04adf845511cea6e62ae58c6"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="6495f1dd92153298f7c5f1b667fb97f3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<h1>date formatting</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 960px; left: 0px; top: 191px;" data-block-id="830bf87bfcef402b5a4d2a8878523526"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
+<p>Stamp out actual formatters for C++ time-related types.</p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 451px; left: 0px; top: 249px;" data-block-id="d7e44024d8fe241154612839adf650a4"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">// std::chrono::time_point
+template &lt;typename Clock, typename Duration, typename Char&gt;
+struct formatter&lt;time_point&lt;Clock, Duration&gt;, Char&gt; : base_formatter&lt;Char&gt; {
+  template &lt;typename FormatContext&gt;
+  auto format(const time_point&lt;Clock, Duration&gt; &amp; tp, FormatContext &amp; ctx) {
+    return this-&gt;base_format(tp, ctx);
+  }
+};
+
+// std::chrono::zoned_time or date::zoned_time
+template &lt;typename Duration, typename TimeZone, typename Char&gt;
+struct formatter&lt;zoned_time&lt;Duration, TimeZone&gt;, Char&gt; : base_formatter&lt;Char&gt; {
+  template &lt;typename FormatContext&gt;
+  auto format(const zoned_time&lt;Duration, TimeZone&gt; &amp; zt, FormatContext &amp; ctx) {
+    return this-&gt;base_format(zt, ctx);
+  }
+};</code></pre></div></div></section><section data-id="d223a2b84bc2678ef61b4fe5bc3a5163"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="e1f9ab9cf428994b54c91f002111a58a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h1>date formatting</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 210px;" data-block-id="a7894bbb0b81c5517d0bae4e4b08a39a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
@@ -1801,7 +1812,7 @@ auto result = format("My birth date is {:%A %d.%m.%Y %H:%M %Z}",
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":1359172,"slug":"socializing-with-fmt","title":"Socializing with {fmt}","description":"Getting familiar with the fmt library","width":960,"height":700,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/6a5800e9d4cadc414cbb24e3f2f26816/thumb.jpg?1540745577","view_count":0,"user":{"id":951191,"username":"danielae","name":"Daniela Engert","description":"","thumbnail_url":"https://www.gravatar.com/avatar/c5ccadf8d859ea62b2e55d3bb96f9045?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":false,"lite":true,"team_id":null,"settings":{"id":2110086,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"league","theme_color":"black-orange","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":142,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1541580055270,"font_typekit":null,"font_google":null,"notes":{}}};
+			var SLConfig = {"deck": {"id":1359172,"slug":"socializing-with-fmt","title":"Socializing with {fmt}","description":"Getting familiar with the fmt library","width":960,"height":700,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/6a5800e9d4cadc414cbb24e3f2f26816/thumb.jpg?1541607299","view_count":0,"user":{"id":951191,"username":"danielae","name":"Daniela Engert","description":"","thumbnail_url":"https://www.gravatar.com/avatar/c5ccadf8d859ea62b2e55d3bb96f9045?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":false,"lite":true,"team_id":null,"settings":{"id":2110086,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"league","theme_color":"black-orange","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":142,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1541607299318,"font_typekit":null,"font_google":null,"notes":{}}};
 
 
 			// Use local fonts
@@ -1826,7 +1837,7 @@ auto result = format("My birth date is {:%A %d.%m.%Y %H:%M %Z}",
 				showNotes: false,
 				slideNumber: true,
 
-				autoSlide: 0 || 0,
+				autoSlide: 0,
 				autoSlideStoppable: true,
 
 				center: false,
