@@ -75,7 +75,7 @@
 <h1> </h1>
 
 <h1>                       *</h1>
-</div></div></section><section data-id="202be45aa9b58b628479343526d58d69"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 865px; left: 49px; top: 230px;" data-block-id="05001c10a2decf6cf631b14ec654df97"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+</div></div></section><section data-id="202be45aa9b58b628479343526d58d69"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 865px; left: 49px; top: 210px;" data-block-id="05001c10a2decf6cf631b14ec654df97"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <p><strong>sprintf</strong> from the <em>printf</em> function family in the C standard library</p>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 70px;" data-block-id="1b57f07b3445ab82000cb2b0908d8b53"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
@@ -84,19 +84,18 @@
 <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 865px; height: 70px; left: 49px; top: 280px;" data-block-id="c567fe09667c48986731ebc40392f316"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 125%;"><pre class="cpp"><code style="padding: 0px;">
 int n = sprintf(formatted_result, "value %d as hex is %02x", 42, 42);</code></pre></div></div>
 <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 897px; height: 40px; left: 33px; top: 295px;" data-block-id="48011a3b6db53ea606d39a5078bc259b"><div class="sl-block-style" style="z-index: 14; opacity: 0.2;"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 0, 0)" data-shape-stretch="true" style="z-index: 14;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 897 40"><rect width="897" height="40" class="shape-element" fill="rgb(255, 0, 0)"></rect></svg></div></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 81px; top: 393px;" data-block-id="41e4823d727a5be621e9bbff8268b808"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; text-align: left;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 388px;" data-block-id="41e4823d727a5be621e9bbff8268b808"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; text-align: left;">
 <ul>
-	<li class="fragment" data-fragment-index="0">every parameter and even the return type is unsafe</li>
+	<li class="fragment" data-fragment-index="0">every parameter and even the return type is unsafe: unchecked or serve a dual purpose</li>
 	<li class="fragment" data-fragment-index="1">not extendable, works only with built-in types</li>
 	<li class="fragment" data-fragment-index="2">compact format string</li>
 	<li class="fragment" data-fragment-index="2">compilers learned to understand the formatting syntax and may prevent face-palm errors</li>
-	<li class="fragment" data-fragment-index="2">typically highly optimized and really fast</li>
+	<li class="fragment" data-fragment-index="2">typically highly optimized and really fast, but performance is affected by locale support</li>
 </ul>
 </div></div></section><section data-id="174ef00742a2a65f215a4638022ea67b"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 70px;" data-block-id="bff29c8cf06e906c04992726bedce04c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h1>Option 2</h1>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 187px; left: 80px; top: 210px;" data-block-id="bb484970f9f12751ee96631d54f8b9a1"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;iostream&gt;
-#include &lt;sstream&gt;
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 166px; left: 80px; top: 227px;" data-block-id="bb484970f9f12751ee96631d54f8b9a1"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;sstream&gt;
 #include &lt;iomanip&gt;
 
 std::ostringstream stream;
@@ -244,23 +243,25 @@ auto formatted_string = QString("value %1 as hex is %2").arg(42).arg(42, 2, 16)
 
 <p style="text-align:left">formatting syntax</p>
 </div></div>
-<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 477px; height: 560px; left: 483px; top: 140px;" data-block-id="64c0b7b64901a6bc59ece11b8dbb3861"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="1149" data-natural-height="1350" data-lazy-loaded="" data-src="socializing-with-fmt/65314fffdd88040326387f7c9376764c.jpg"></div></div></section><section class="stack" data-id="dbfec333335fcb1abcd694ae71364947"><section data-id="29fc74f1f4969054cbb0fd9f603dce32"><div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 162px; left: 80px; top: 200px;" data-block-id="d554810d79a07651b4b3d2df4f64bc08"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 477px; height: 560px; left: 483px; top: 140px;" data-block-id="64c0b7b64901a6bc59ece11b8dbb3861"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="1149" data-natural-height="1350" data-lazy-loaded="" data-src="socializing-with-fmt/65314fffdd88040326387f7c9376764c.jpg"></div></div></section><section class="stack" data-id="dbfec333335fcb1abcd694ae71364947"><section data-id="29fc74f1f4969054cbb0fd9f603dce32"><div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 191px; left: 80px; top: 210px;" data-block-id="d554810d79a07651b4b3d2df4f64bc08"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
 
 using namespace fmt;
 
 template &lt;typename String, typename... Args&gt;
-auto format(const String &amp; format_str, const Args &amp;... args);</code></pre></div></div>
+basic_string&lt;Char&gt; // 'Char' is derived from 'String'
+format(const String &amp; format_str, const Args &amp;... args);</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 70px;" data-block-id="6e8fcfcc1318ec322eedd38dfe88b5e5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
 <h1>The most basic function</h1>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 43px; left: 80px; top: 420px;" data-block-id="eba91320fca64a759964568c9b0c22f5"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">auto str = format("The answer is {}", 42);</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 44px; left: 80px; top: 586px;" data-block-id="a9f9978fb7221060a5248c7bcc6f6ae9"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">std::string str("The answer is 42");</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 505px;" data-block-id="252cc9ad4d5239447b4efc69f9a4db89"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; text-align: left;">
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 43px; left: 80px; top: 447px;" data-block-id="eba91320fca64a759964568c9b0c22f5"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">auto str = format("The answer is {}", 42);</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 44px; left: 80px; top: 597px;" data-block-id="a9f9978fb7221060a5248c7bcc6f6ae9"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">std::string str("The answer is 42");</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 521px;" data-block-id="252cc9ad4d5239447b4efc69f9a4db89"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; text-align: left;">
 <p>produces result</p>
-</div></div></section><section data-id="43fa7a94ce76093d31f59cdfe57d7595"><div class="sl-block" data-block-type="code" style="width: 800px; height: 127px; left: 80px; top: 210px;" data-block-id="bd71158e96f3aa60ec13e3e775162b48"><div class="sl-block-content notranslate" style="z-index: 10; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
+</div></div></section><section data-id="43fa7a94ce76093d31f59cdfe57d7595"><div class="sl-block" data-block-type="code" style="width: 800px; height: 140px; left: 80px; top: 210px;" data-block-id="bd71158e96f3aa60ec13e3e775162b48"><div class="sl-block-content notranslate" style="z-index: 10; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
 
 template &lt;typename String, typename... Args&gt;
-auto format(const String &amp; format_str, const Args &amp;... args);</code></pre></div></div>
+basic_string&lt;Char&gt; format(const String &amp; format_str,
+                          const Args &amp;... args);</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 70px;" data-block-id="6b6549a3a34ef6885efb1f9729151992"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: center;">
 <h2>The most basic function</h2>
 </div></div>
@@ -273,10 +274,11 @@ auto format(const String &amp; format_str, const Args &amp;... args);</code></pr
 	<li>therefore <span style="color:#FFFF00"><strong>format</strong></span> is formatting in terms of <span style="color:#FFD700">char</span> code units</li>
 	<li>and produces a 'std::basic_string&lt;<span style="color:#FFD700">char</span>&gt;'</li>
 </ul>
-</div></div></section><section data-id="4d2698038b2c6855c09e66e0c7dce683"><div class="sl-block" data-block-type="code" style="width: 800px; height: 127px; left: 80px; top: 192px;" data-block-id="626e160c2ef6aa08d8f8c4321b69bba3"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
+</div></div></section><section data-id="4d2698038b2c6855c09e66e0c7dce683"><div class="sl-block" data-block-type="code" style="width: 800px; height: 140px; left: 80px; top: 192px;" data-block-id="626e160c2ef6aa08d8f8c4321b69bba3"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
 
 template &lt;typename String, typename... Args&gt;
-auto format(const String &amp; format_str, const Args &amp;... args);</code></pre></div></div>
+basic_string&lt;Char&gt; format(const String &amp; format_str,
+                          const Args &amp;... args);</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 70px;" data-block-id="09be8f03146233d080eed98332315a34"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
 <h2>The most basic function</h2>
 </div></div>
@@ -305,38 +307,38 @@ auto format(const String &amp; format_str, const Args &amp;... args);</code></pr
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 622px;" data-block-id="1d4abbfd8ed6127c0ea6ecc7c64d316b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; text-align: left;">
 <p>as long as there exists a matching specialization of std::char_traits.</p>
-</div></div></section><section data-id="fb9859c397c8e22d110c07cd50679f5f"><div class="sl-block" data-block-type="code" style="width: 800px; height: 127px; left: 80px; top: 192px;" data-block-id="11f62ebcb1468fdb22645f638f919672"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
+</div></div></section><section data-id="fb9859c397c8e22d110c07cd50679f5f"><div class="sl-block" data-block-type="code" style="width: 800px; height: 149px; left: 80px; top: 192px;" data-block-id="11f62ebcb1468fdb22645f638f919672"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
 
 template &lt;typename String, typename... Args&gt;
-auto format(const String &amp; format_str, const Args &amp;... args);</code></pre></div></div>
+basic_string&lt;Char&gt; format(const String &amp; format_str,
+                          const Args &amp;... args);</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 70px;" data-block-id="be01dac4bb45c592915cb19c5a906623"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
 <h2>The most basic function</h2>
 </div></div>
 
 
 
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 350px;" data-block-id="43dd1038590ac2126a2cc37077e36ac9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
-<p>Numeric formatting uses the 'std::numpunct&lt;Char&gt;' facet for localized formatting.</p>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 380px;" data-block-id="43dd1038590ac2126a2cc37077e36ac9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
+<p>Numeric formatting uses the 'std::numpunct&lt;Char&gt;' facet for localized punctuation only when <em>explicitly</em> asked for locale-aware formatting by specifying the 'n' numeric formatting mode. If you don't order this, it's not on your bill and you don't have to pay for it.</p>
 
-<p>Be beware of the fact that the standard library is not required to supply numeric formatting facets for use with character types other than char and wchar_t!</p>
-
-<p> </p>
-</div></div></section><section data-id="79e97c3668485a5649b7c9971f3502aa"><div class="sl-block" data-block-type="code" style="width: 800px; height: 127px; left: 80px; top: 192px;" data-block-id="4519fcc29e031094226dc318bfca10a0"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
+<p>Be beware of the fact that the standard library is not required to supply numeric formatting facets for use with character types other than 'char' and 'wchar_t'!</p>
+</div></div></section><section data-id="79e97c3668485a5649b7c9971f3502aa"><div class="sl-block" data-block-type="code" style="width: 800px; height: 144px; left: 80px; top: 192px;" data-block-id="4519fcc29e031094226dc318bfca10a0"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 125%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
 
 template &lt;typename String, typename... Args&gt;
-auto format(const String &amp; format_str, const Args &amp;... args);</code></pre></div></div>
+basic_string&lt;Char&gt; format(const String &amp; format_str,
+                          const Args &amp;... args);</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 70px;" data-block-id="5567840739f730fa80fbea2caf153290"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
 <h2>The most basic function</h2>
 </div></div>
 
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 350px;" data-block-id="99a3f948a31c8ece332b9986b17c1225"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 385px;" data-block-id="99a3f948a31c8ece332b9986b17c1225"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
 <p>The underlying character types of all strings or string-like <em>Args</em> amongst the formatting arguments 'args' <strong>must</strong> match the character type deduced from the format string 'format_str'.</p>
 
 <p> </p>
 
 <p>Violating this requirement will cause a compilation failure.</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 591px;" data-block-id="ca57d0dcf82ca33bda357afab83dba31"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; text-align: left;" data-fragment-index="0">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 630px;" data-block-id="ca57d0dcf82ca33bda357afab83dba31"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; text-align: left;" data-fragment-index="0">
 <p>The generated error message can possibly be improved...</p>
 </div></div></section></section><section class="stack" data-id="c47da846afd265058cc58ba7ee7b0bb7"><section data-id="9b68ea5234014f2852b446591a0f2523"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 70px;" data-block-id="dc51890eb41130498c5f39296f8b66b8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; text-align: center;">
 <h1>formatting into a container</h1>
@@ -365,21 +367,19 @@ OutputIt format_to(OutputIt it, const Sring &amp; format_str,
 vector&lt;wchar_t&gt; result;
 format_to(back_inserter(result), L"{}", 42);</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 350px;" data-block-id="2dacbdc5d0ea023b2dfc02afb270b8fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
-<p>This produces a vector of size() == 2 with elements L'4' and '2'<br>
- </p>
+<p>This produces a vector of size() == 2 with elements L'4' and L'2'</p>
 
 <ul>
-	<li>you may want to reserve enough capacity beforehand to avoid repeated allocations<br>
-	 </li>
-	<li>you may find it advantageous to hang on to a container and reuse it as a dynamically sized formatting cache</li>
+	<li>you may want to reserve enough capacity beforehand to avoid repeated allocations</li>
+	<li>you may find it advantageous to hang on to a container and reuse it as a dynamically-sized formatting cache</li>
 </ul>
 </div></div></section></section><section class="stack" data-id="e99084019b51b85a06afecfa53242438"><section data-id="f8b71d5a5db6741c0d9b8bb4c2c5f587"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="e4c7b3f85a8edd7e5fbd86ae3181129e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: center;">
 <h1>control the maximum formatted length</h1>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 800px; height: 278px; left: 80px; top: 270px;" data-block-id="eaf86ce268741651a762bc14acbb13ba"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
+<div class="sl-block" data-block-type="code" style="width: 809px; height: 278px; left: 80px; top: 270px;" data-block-id="eaf86ce268741651a762bc14acbb13ba"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
 
 template &lt;typename OutputIt, typename String, typename... Args&gt;
-auto format_to(OutputIt it, size_t size, const Sring &amp; format_str,
+auto format_to(OutputIt it, size_t size, const String &amp; format_str,
                const Args &amp;... args);
 
 template &lt;typename OutputIt&gt;
@@ -399,7 +399,7 @@ struct format_to_n_result {
 u16string result;
 auto info = format_to_n(back_inserter(result), result.capacity(),
                         u"{}", 42);</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 388px;" data-block-id="7126d64d4c694afe675a527770e5e6f6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 420px;" data-block-id="7126d64d4c694afe675a527770e5e6f6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
 <p>This produces an u16string result(u"42") as long as the formatted result is no longer than the allocated capacity (e.g. 7 in this case on 64 bit, VS2017 with SSO).</p>
 </div></div></section><section data-id="62d706ea563b58ee84f38337ca17f088"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="ea30e841500a1528b8316b12329bc812"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; text-align: center;">
 <h2>control the maximum formatted length</h2>
@@ -409,7 +409,7 @@ auto info = format_to_n(back_inserter(result), result.capacity(),
 u16string result;
 auto info = format_to_n(back_inserter(result), result.capacity(),
                         u"{}", 42987654321);</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 420px;" data-block-id="538089f1b00ce24048dc20479d65ce26"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 427px;" data-block-id="538089f1b00ce24048dc20479d65ce26"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
 <p>The formatted result might be u"4298765" (again, 64 bit VS2017).</p>
 
 <p>The 'size' member of the returned value 'info' contains the untruncated size 11 which denotes the actual capacity required to prevent truncation.</p>
@@ -420,8 +420,9 @@ auto info = format_to_n(back_inserter(result), result.capacity(),
 
 template &lt;typename String, typename... Args,
           size_t SIZE, typename Char&gt;
-auto format_to(basic_memory_buffer&lt;Char, SIZE&gt; &amp; buffer,
-               const String &amp; format_str, const Args &amp;... args);
+OutputIterator format_to(basic_memory_buffer&lt;Char, SIZE&gt; &amp; buffer,
+                         const String &amp; format_str,
+                         const Args &amp;... args);
 
 template &lt;typename Char, size_t SIZE = inline_buffer_size,
           typename Allocator = allocator&lt;T&gt;&gt;
@@ -509,10 +510,27 @@ string result = format(fmt("The answer is {:d}"), "42");</code></pre></div></div
 #include &lt;fmt/format.h&gt;
 
 string result = format(fmt("The answer is {:d}"), "42");</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 351px;" data-block-id="8ba6c585d6e7b6028fbc649cc2e921fb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 350px;" data-block-id="8ba6c585d6e7b6028fbc649cc2e921fb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
 <p>Defining FMT_STRING_ALIAS to 1 before the inclusion of 'format.h' makes the macro <span style="color:#FFFF00">fmt</span> available to easily define compile-time format strings the same way on all compilers. This feature requires C++14 relaxed constexpr support from the compiler!</p>
 
-<p>Obviously, compile-time checking precludes runtime translation of the format string.</p>
+<p>Obviously, compile-time checking in this pre-packaged form precludes runtime translation of the format string.</p>
+</div></div></section><section data-id="f31f10de2dc13d0473901233b324ba3e"><div class="sl-block" data-block-type="text" style="height: auto; width: 675px; left: 143px; top: 70px;" data-block-id="0842d3496881a59269550e197545ad84"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; text-align: center;" dir="ui">
+<h2>compile-time format-strings</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 800px; height: 121px; left: 80px; top: 178px;" data-block-id="a8f8e3d95a1cf6be3a868c92cfd2cb48"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
+
+#define translate(...) // to some equivalent of fmt(...) 
+string result = format(translate("The answer is {:d}"), "42");</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 326px;" data-block-id="654e2e14683a7380a6f91359788277b2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
+<p>Some macro magic and proper tooling may overcome this drawback:</p>
+
+<ul>
+	<li>the compiler sees a compile-time string and checks for syntax errors and consistency in some kind of 'pre-check mode'</li>
+	<li>in 'regular mode' it sees the lookup into the translation database</li>
+	<li>the translation tools build see translation markers</li>
+</ul>
+
+<p>There's probably no one-size-fits-all solution readily at hand.</p>
 </div></div></section></section><section data-id="38393d51673bab488970d935525ce6c4"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="3eb99404ac99a88d7cec17044be8fe2d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; text-align: center;">
 <h1>other targets</h1>
 </div></div>
@@ -557,21 +575,21 @@ int fprintf(basic_ostream&lt;char-type-of-String&gt; &amp; stream,
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 800px; height: 169px; left: 80px; top: 156px;" data-block-id="01f493cc1225c38523c9759d1d234758"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/printf.h&gt;
 
-auto sprintf();
-int printf();
-int fprintf(FILE * file);
-int fprintf(basic_ostream&lt;char-type-of-String&gt; &amp; stream);</code></pre></div></div>
+auto sprintf(...);
+int printf(...);
+int fprintf(FILE * file, ...);
+int fprintf(basic_ostream&lt;char-type-of-String&gt; &amp; stream, ...);</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 350px;" data-block-id="fb6949063862f8ccfd75a186e78b77c3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
 <p>are still type-safe and equivalent to</p>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 800px; height: 169px; left: 80px; top: 420px;" data-block-id="cac534b6876f0d5e844d065d241d0d14"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">#include &lt;fmt/format.h&gt;
 
-auto format();
-int print();
-int print(FILE * file);
-basic_ostream&lt;char-type-of-String&gt; &lt;&lt; format();</code></pre></div></div>
+auto format(...);
+int print(...);
+int print(FILE * file, ...);
+basic_ostream&lt;char-type-of-String&gt; &lt;&lt; format(...);</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 622px;" data-block-id="a00f8c7fe789f7527bb2053a954f2d12"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; text-align: left;">
-<p>but with extended POSIX format sprecification syntax instead of the native {fmt} syntax</p>
+<p>but with extended POSIX format specification syntax instead of the native {fmt} syntax</p>
 </div></div></section></section><section class="stack" data-id="d08f14bb910dd6d6bdd3ff60d718f839"><section data-id="18aa66f5c1b927be92757ae68a132526"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 70px;" data-block-id="7e4616fc9aae2f6806ce94cfefde1b4c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h1>Formatting syntax</h1>
 </div></div>
@@ -604,7 +622,7 @@ basic_ostream&lt;char-type-of-String&gt; &lt;&lt; format();</code></pre></div></
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 210px;" data-block-id="840b9a4309b76b24a3574f7bde23f24c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
 <p>Literal text fields are copied verbatim to the output.</p>
 
-<p>Replacement fields consist of two parts, which are separated by a colon ' <span style="color:#AFEEEE">:</span> ' character</p>
+<p>Replacement fields consist of two parts which are separated by a colon ' <span style="color:#AFEEEE">:</span> ' character</p>
 
 <ul>
 	<li>an <span style="color:#FFA500">argument identifier</span>
@@ -631,7 +649,7 @@ basic_ostream&lt;char-type-of-String&gt; &lt;&lt; format();</code></pre></div></
 
 <pre><span style="color:#FFFF00">{</span><span style="color:#00FFFF">:</span><span style="color:#EE82EE">&lt;5X</span><span style="color:#FFFF00">}</span>  next argument formatted as specified</pre>
 
-<pre><span style="color:#FFFF00">{</span><span style="color:#FF8C00">2</span><span style="color:#00FFFF">:</span><span style="color:#EE82EE">#</span><span style="color:#FFFF00">}</span> second argument formatted as specified</pre>
+<pre><span style="color:#FFFF00">{</span><span style="color:#FF8C00">2</span><span style="color:#00FFFF">:</span><span style="color:#EE82EE">#</span><span style="color:#FFFF00">}</span>  third argument formatted as specified</pre>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 171px;" data-block-id="0e4a2dff9ca7f70035e6cce17ccebb20"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
 <p>valid:</p>
@@ -696,7 +714,7 @@ result = format("{}{0}{a}", "a"_a=42); // mixed indexing</code></pre></div></div
 <strong>width</strong>      ::= <a href="http://fmtlib.net/dev/syntax.html#grammar-token-integer" target="_blank"><span class="pre">integer</span></a> | "{" <a href="http://fmtlib.net/dev/syntax.html#grammar-token-arg_id" target="_blank"><span class="pre">argument identifier</span></a> "}"
 <strong>precision</strong>  ::= <a href="http://fmtlib.net/dev/syntax.html#grammar-token-integer" target="_blank"><span class="pre">integer</span></a> | "{" <a href="http://fmtlib.net/dev/syntax.html#grammar-token-arg_id" target="_blank"><span class="pre">argument identifier</span></a> "}"
 <strong>type</strong>       ::= <a href="http://fmtlib.net/dev/syntax.html#grammar-token-int_type" target="_blank"><span class="pre">inttype</span></a> | "a" | "A" | "c" | "e" | "E" | "f" | "F"   
-                         | "g" | "G" | "p" | "s"
+                       | "g" | "G" | "p" | "s"
 <strong>inttype</strong>    ::= "b" | "B" | "d" | "n" | "o" | "x" | "X"</span></pre>
 </div></div></section><section data-id="51373ee1fbc245032edff1a257c502cf"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="91cd6185a2602c67638d2b3cfaa20d50"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h2>Formatting specification</h2>
@@ -880,17 +898,17 @@ void print(rgb foreground, rgb, background, const String &amp; format,
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 210px;" data-block-id="95048420fcd906bd96eb351998a40438"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
 <p>This is the base template of (almost) all formatters. Some built-in formatters and all user-defined formatters are (partial) specializations of it.</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 960px; height: 300px; left: 0px; top: 400px;" data-block-id="df79ae4dbc1eb274b2d26c4231dddb84"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">// A formatter for objects of type T.
-template &lt;typename T, typename Char = char, typename Enable = void&gt;
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 313px; left: 80px; top: 350px;" data-block-id="df79ae4dbc1eb274b2d26c4231dddb84"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">// A formatter for objects of type T.
+template &lt;typename T,             // the type to be formatted
+          typename Char = char,   // the formatters's Char type
+          typename Enable = void&gt; // enable SFINAE
 struct formatter {
-  static_assert(internal::no_formatter_error&lt;T&gt;::value,
-    "don't know how to format the type, include fmt/ostream.h if it provides "
-    "an operator&lt;&lt; that should be used");
-
   template &lt;typename ParseContext&gt;
   typename ParseContext::iterator parse(ParseContext &amp;);
+
   template &lt;typename FormatContext&gt;
-  auto format(const T &amp; val, FormatContext &amp; ctx) -&gt; decltype(ctx.out());
+  auto format(const T &amp; val,
+              FormatContext &amp; ctx) -&gt; decltype(ctx.out());
 };</code></pre></div></div></section><section data-id="58f7c362731e856474a8f2967a1da59d"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="6bb491aa2c6c47656fbb421ba5702464"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h1>Formatters</h1>
 </div></div>
@@ -939,12 +957,12 @@ struct formatter {
     -&gt; decltype(ctx.out());
 };</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 544px;" data-block-id="634843eb8f9238a3387cee440952caf6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; text-align: left;">
-<p>The iterator returned by the <span style="color:#FFFF00">out()</span> function of the given context models a <em>BackInserter</em> into a <em>BackInsertRange</em>. The return value is a iterator that refers to the next write position in the output sink.</p>
+<p>The iterator returned by the <span style="color:#FFFF00">out()</span> function of the given context models an <em>Outputiterator</em> into a <em>BackInsertRange</em>. The return value is an iterator that refers to the next write position in the output sink.</p>
 </div></div></section></section><section class="stack" data-id="0f25f2e6444463e1960569641c6cef97"><section data-id="38b8751b941545f5f7526232ca4aa330"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 70px;" data-block-id="a67eabc4ffa5a9c97b2b62f26240e13c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h1>A Simple Formatter</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 210px;" data-block-id="4c587d52dff6dc9e7faa2e744652ec49"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
-<p>Achieve the same formatted output as the one generated from the baseline code</p>
+<p>Goal: achieve the same formatted output as the one generated from the baseline code</p>
 
 <ul>
 	<li>all 3 components</li>
@@ -1086,7 +1104,7 @@ struct formatter&lt;rgb, Char&gt; : formatter&lt;uint8_t, Char&gt; {
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 153px;" data-block-id="fb2b3f5ad14f67d1f0979324e7d6b5fc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;" dir="ui">
 <p>The framework:</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 860px; height: 444px; left: 80px; top: 225px;" data-block-id="60ea88a597a8f222a54352b252d23b6e"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">template &lt;typename Char&gt;
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 860px; height: 475px; left: 80px; top: 225px;" data-block-id="60ea88a597a8f222a54352b252d23b6e"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">template &lt;typename Char&gt;
 struct formatter&lt;rgb, Char&gt; : formatter&lt;uint8_t, Char&gt; {
   using base = formatter&lt;uint8_t, Char&gt;;
 
@@ -1101,6 +1119,7 @@ struct formatter&lt;rgb, Char&gt; : formatter&lt;uint8_t, Char&gt; {
 
   template &lt;typename ParseContext&gt;
   auto parse(ParseContext &amp; ctx);
+
   template &lt;typename FormatContext&gt;
   auto format(const rgb &amp; color, FormatContext &amp; ctx);
 };</code></pre></div></div></section><section data-id="55318b78569897aaea271c15ed6f61f7"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="48911432facea32dccc108cf86bee273"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
@@ -1327,7 +1346,7 @@ void format(basic_buffer&lt;Char&gt; &amp; buffer, const T &amp; value) {
 	(metaprogramming galore)</li>
 	<li>express <strong>all</strong> conversions to 'fmt::basic_string_view' <strong>only</strong> in terms of the conversion operator</li>
 	<li>put the conversion operator into the <strong>public</strong> interface of {fmt}</li>
-	<li>make it a customization point and <strong>detect</strong> by ADL if there exists this conversion operator for <strong>any</strong> given type<br>
+	<li>make it a customization point and <strong>detect</strong> by ADL if there exists this conversion operator (or not) for <strong>any</strong> given type<br>
 	(even more metaprogramming)</li>
 </ul>
 </div></div></section><section class="stack" data-id="4311177ee952c402683dc34b2cdd2e1f"><section data-id="596a84a86cbb5f9a4639f8156862ed26"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 70px;" data-block-id="df7ae3ff137ebe6ceb15cd6020e7f61b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
@@ -1336,16 +1355,16 @@ void format(basic_buffer&lt;Char&gt; &amp; buffer, const T &amp; value) {
 <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 849px; height: 99px; left: 56px; top: 181px;" data-block-id="af0317620890aaa44d5a1628a9ed9e13"><div class="sl-block-content notranslate" style="z-index: 11; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">namespace ns_of_string_type {
   constexpr auto to_string_view(const string_type &amp; string) noexcept;
 }</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 303px;" data-block-id="1ce4b3778565895d916243e6aeb3a6cb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 849px; left: 56px; top: 284px;" data-block-id="1ce4b3778565895d916243e6aeb3a6cb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
 <ul>
 	<li>must be declared in exactly the same namespace where 'string_type' is declared.</li>
 	<li>must return an instance of 'fmt::basic_string_view&lt;Char&gt;'.</li>
 	<li>Char must match the character type of 'string'.</li>
 	<li>is typically parameterized on the character type.</li>
-	<li>the Char <strong>reference</strong> in the returned view must be <strong>stable</strong>.</li>
+	<li>the Char <strong>reference</strong> in the returned view must be <strong>valid</strong> for the whole duration of use.</li>
 </ul>
 </div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 849px; height: 140px; left: 56px; top: 560px;" data-block-id="8a99b2f3aab2a172fce51a651e0a9961"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">namespace ns_of_string_type {
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 849px; height: 140px; left: 56px; top: 557px;" data-block-id="8a99b2f3aab2a172fce51a651e0a9961"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">namespace ns_of_string_type {
   template &lt;typename Char&gt;
   constexpr fmt::basic_string_view&lt;Char&gt;
     to_string_view(const string_type&lt;Char&gt; &amp; string) noexcept;
@@ -1527,12 +1546,11 @@ template &lt;typename Char&gt;
 struct formatter&lt;boost::locale::basic_message&lt;Char&gt;, Char&gt; :
        formatter&lt;basic_string_view&lt;Char&gt;, Char&gt; {
   using base = formatter&lt;basic_string_view&lt;Char&gt;, Char&gt;;
-  basic_string&lt;Char&gt; translated;
 
   template &lt;typename FormatContext&gt;
   auto format(const boost::locale::basic_message&lt;Char&gt; &amp; message,
               FormatContext &amp; ctx) {
-    translated = message;
+    basic_string&lt;Char&gt; translated = message;
     return base::format({translated.data(), translated.size()},
                         ctx);
   }
@@ -1586,7 +1604,7 @@ to_string_view(const basic_message&lt;Char&gt; &amp; message) noexcept {
 <h1>Numeric formatting</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 210px;" data-block-id="152ae9cfbe0fe28dba1d2c9acec1e052"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;" dir="ui">
-<p>In its current implementation, {fmt} uses the std::numpunct facet of the current global locale to format numbers.</p>
+<p>In its current implementation, {fmt} uses the std::numpunct facet of the current global locale to format numbers when the 'n' numeric formatting specifier is given.</p>
 
 <p>A problem is the fact that standard libraries are not required to provide locale facets for character types other than 'char' and 'wchar_t'.</p>
 
@@ -1634,7 +1652,7 @@ string s = format("It is now {:%Y-%B-%d %H:%M:%S}.", Time);</code></pre></div></
 <h1>date formatting</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 840px; left: 60px; top: 202px;" data-block-id="f51003ec54f98991a5fea5c4d669b7a0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
-<p>The layout of a custom-formatter base class for 'std::chrono' and <em>date</em> types:</p>
+<p>The layout of a custom-formatter base class for most 'std::chrono' and <em>date</em> types:</p>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 840px; height: 384px; left: 60px; top: 311px;" data-block-id="7ca18849b5318e95376505630d544a5b"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">namespace fmt {
 
@@ -1677,7 +1695,7 @@ auto parse(ParseContext &amp; ctx) {
 <h1>date formatting</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 185px;" data-block-id="6714b9a1d2bf165958eed1fca42c6662"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
-<p>The <span style="color:#FFFF00">format</span> function. It must be templated on the actual value type.</p>
+<p>The <span style="color:#FFFF00">base_format</span> function. It must be templated on the actual value type.</p>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 800px; height: 420px; left: 80px; top: 280px;" data-block-id="5c5919f117928d63df42743c268806cd"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">template &lt;typename T, typename FormatContext&gt;
 auto base_format(const T &amp; t, FormatContext &amp; ctx) {
@@ -1700,7 +1718,7 @@ auto base_format(const T &amp; t, FormatContext &amp; ctx) {
 <h1>date formatting</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 960px; left: 0px; top: 191px;" data-block-id="830bf87bfcef402b5a4d2a8878523526"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
-<p>Stamp out actual formatters for C++ time-related types.</p>
+<p>Stamp out actual formatters for C++ time point-related types.</p>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 960px; height: 451px; left: 0px; top: 249px;" data-block-id="d7e44024d8fe241154612839adf650a4"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">// std::chrono::time_point
 template &lt;typename Clock, typename Duration, typename Char&gt;
@@ -1718,25 +1736,50 @@ struct formatter&lt;zoned_time&lt;Duration, TimeZone&gt;, Char&gt; : base_format
   auto format(const zoned_time&lt;Duration, TimeZone&gt; &amp; zt, FormatContext &amp; ctx) {
     return this-&gt;base_format(zt, ctx);
   }
+};</code></pre></div></div></section><section data-id="bfa37ef8eb1e8eb50dae96bbbc0af5b0"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="7dc62fa9c03bb8d477f11e3e0eb0b93b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<h1>date formatting</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 960px; left: 0px; top: 171px;" data-block-id="881f374dfb7edea47ca79dea4f1260cb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
+<p>Plus a special one for 'std::chrono::duration'. It's derived from the built-in numeric formatters to use their formatting specs.</p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 426px; left: 0px; top: 274px;" data-block-id="1d0a952177d0e0c896262f8cc40d0896"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">// std::chrono::duration
+template &lt;typename Rep, typename Period, typename Char&gt;
+struct formatter&lt;duration&lt;Rep, Period&gt;, Char&gt; : formatter&lt;Rep, Char&gt; {
+  using base_formatter = formatter&lt;Rep, Char&gt;;
+  using unit_formatter = formatter&lt;basic_string_view&lt;Char&gt;, Char&gt;;
+
+  template &lt;typename FormatContext&gt;
+  auto format(const duration&lt;Rep, Period&gt; &amp; d, FormatContext &amp; ctx) {
+    // the numeric value part
+    auto it = base_formatter::format(d.count(), ctx);
+    // a single space character according to SI formatting rules
+    it = ' ';
+    // the unit part
+    const auto u = detail::get_units&lt;Char&gt;(typename Period::type{});
+    return unit_formatter{}.format({ u.data(), u.size() }, ctx);
+  }
 };</code></pre></div></div></section><section data-id="d223a2b84bc2678ef61b4fe5bc3a5163"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 70px;" data-block-id="e1f9ab9cf428994b54c91f002111a58a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h1>date formatting</h1>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 210px;" data-block-id="a7894bbb0b81c5517d0bae4e4b08a39a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 171px;" data-block-id="a7894bbb0b81c5517d0bae4e4b08a39a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
 <p>The result:</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 800px; height: 100px; left: 80px; top: 280px;" data-block-id="a9750d7b6db07b684e9d6da8602ef37a"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">const auto myBirthDate = local_days{ 11_d / mar / 1963 } + 5min;
+<div class="sl-block" data-block-type="code" style="width: 800px; height: 100px; left: 80px; top: 230px;" data-block-id="a9750d7b6db07b684e9d6da8602ef37a"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">const auto myBirthDate = local_days{ 11_d / mar / 1963 } + 5min;
 auto result = format("My birth date is {:%A %d.%m.%Y %H:%M}",
                      myBirthDate);</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 420px;" data-block-id="1b00355dc76e6f975c2762125af5f385"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 331px;" data-block-id="1b00355dc76e6f975c2762125af5f385"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: left;">
 <p>returns "My birth date is Monday 11.03.1963 00:05"</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 800px; height: 140px; left: 80px; top: 490px;" data-block-id="03b6fe604ce19fce54a055db431521a6"><div class="sl-block-content notranslate" style="z-index: 15; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">const auto myBirthDate = local_days{ 11_d / mar / 1963 } + 5min;
+<div class="sl-block" data-block-type="code" style="width: 800px; height: 201px; left: 80px; top: 410px;" data-block-id="03b6fe604ce19fce54a055db431521a6"><div class="sl-block-content notranslate" style="z-index: 15; font-size: 120%;"><pre class="cpp"><code style="padding: 10px;">const auto myBirthDate = local_days{ 11_d / mar / 1963 } + 5min;
 const auto myBirthZoned = make_zoned(current_zone(), myBirthDate);
+const auto minutesAfterMidnight = round&lt;minutes&gt;(myBirthDate)
+                                - floor&lt;days&gt;(myBirthDate);
 
-auto result = format("My birth date is {:%A %d.%m.%Y %H:%M %Z}",
-                     myBirthZoned);</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 661px;" data-block-id="85a17f824e1941415cfe8c575326c74e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; text-align: left;">
-<p>returns "My birth date is Monday 11.03.1963 00:05 CET"</p>
+auto result = format("My birth date is {:%A %d.%m.%Y %H:%M %Z},"
+                     " {} after midnight.),
+                     myBirthZoned, minutesAfterMidnight);</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 622px;" data-block-id="85a17f824e1941415cfe8c575326c74e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; text-align: left;">
+<p>"My birth date is Monday 11.03.1963 00:05 CET, 5 min after midnight."</p>
 </div></div></section></section><section data-id="87fa10cfedb4a008d3a5d2088de1617d"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 652px; left: 80px; top: 0px;" data-block-id="b2b894a556932ac78eac0be688ebb901"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left; font-size: 200%;">
 <p>{fmt} the future</p>
 </div></div>
@@ -1754,7 +1797,7 @@ auto result = format("My birth date is {:%A %d.%m.%Y %H:%M %Z}",
 <ul>
 	<li>show better error messages which help users to easily identify mistakes</li>
 	<li>the numeric formatting is still a bit weak on the locale-awareness</li>
-	<li>create additional overloads which allow feeding locales into the formatting machinery</li>
+	<li>create additional overloads which allow feeding locales into the formatting machinery for a single call only</li>
 	<li>allow easier use of allocators</li>
 	<li>give custom formatters access to formatting specifiers that are parsed by formatters that they derive from</li>
 </ul>
@@ -1776,7 +1819,7 @@ auto result = format("My birth date is {:%A %d.%m.%Y %H:%M %Z}",
 <p>To be discussed in the San Diego meeting. As far as we know, the standards committee welcomes the library.</p>
 
 <p>I see one problem though: the proposal is much narrower in its scope than the reference implementation which contains all of the features presented here.</p>
-</div></div></section><section data-id="3ea1bdede0fde3c00fd1a18391c44eac"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 0px;" data-block-id="4a67bf5247fdd72386a4b6820d5d434b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: left;">
+</div></div></section><section data-id="3ea1bdede0fde3c00fd1a18391c44eac"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 720px; left: 80px; top: 0px;" data-block-id="4a67bf5247fdd72386a4b6820d5d434b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; text-align: center;">
 <h1>Resources</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 480px; left: 80px; top: 105px;" data-block-id="603b6b7a884f9f9e4bb8c1839aa8cce7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
@@ -1812,7 +1855,7 @@ auto result = format("My birth date is {:%A %d.%m.%Y %H:%M %Z}",
 		</div>
 
 		<script>
-			var SLConfig = {"deck": {"id":1359172,"slug":"socializing-with-fmt","title":"Socializing with {fmt}","description":"Getting familiar with the fmt library","width":960,"height":700,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/6a5800e9d4cadc414cbb24e3f2f26816/thumb.jpg?1541607299","view_count":0,"user":{"id":951191,"username":"danielae","name":"Daniela Engert","description":"","thumbnail_url":"https://www.gravatar.com/avatar/c5ccadf8d859ea62b2e55d3bb96f9045?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":false,"lite":true,"team_id":null,"settings":{"id":2110086,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"league","theme_color":"black-orange","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":142,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1541607299318,"font_typekit":null,"font_google":null,"notes":{}}};
+			var SLConfig = {"deck": {"id":1359172,"slug":"socializing-with-fmt","title":"Socializing with {fmt}","description":"Getting familiar with the fmt library","width":960,"height":700,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/6a5800e9d4cadc414cbb24e3f2f26816/thumb.jpg?1541607299","view_count":0,"user":{"id":951191,"username":"danielae","name":"Daniela Engert","description":"","thumbnail_url":"https://www.gravatar.com/avatar/c5ccadf8d859ea62b2e55d3bb96f9045?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":false,"lite":true,"team_id":null,"settings":{"id":2110086,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"league","theme_color":"black-orange","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":144,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1541869640183,"font_typekit":null,"font_google":null,"notes":{}}};
 
 
 			// Use local fonts
